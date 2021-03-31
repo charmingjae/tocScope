@@ -1,0 +1,21 @@
+
+.btnShowdata{
+    display: block;
+    height:4vh;
+    margin: 0 auto;
+    margin-top: 2vh;
+    line-height: 14px * 2;
+    padding: 0 20px;
+    background:#e9798f;
+    letter-spacing: 2px;
+    transition: .2s all ease-in-out;
+    outline: none;
+    border: 1px solid rgba(0,0,0,1);
+    box-shadow: 3px 3px 1px #ac82b6, 3px 3px 1px 1px rgba(0,0,0,1);
+}
+
+.btnShowdata:hover{
+    background: rgba(0,0,0,1);
+    color: white;
+    border: 1px solid rgba(0,0,0,1);
+}

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+
+.mainDiv{
+    height: 50vh;
+    width:50%;
+    margin: 0 auto;
+    margin-top: 5vh;
+    border:0.5px;
+    outline-style: groove;
+    background-color:beige;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.inputID{
+    outline:0;
+    height:12%;
+    width: 60%;
+
+    font-size: 14pt;
+    font-family: 'Fjalla One';
+    color: #2A293E;
+
+    border: none;
+    border-bottom: 5px solid rgba(0,0,0,1);
+    background:#f8f4e5;
+    min-width: 250px;
+    padding-left: 5px;
+    outline: none;
+    color: rgba(0,0,0,1);
+
+    background-color:beige;
+
+}
+
+.inputPW{
+    outline:0;
+    height:12%;
+    width: 60%;
+
+    font-size: 14pt;
+    font-family: 'Fjalla One';
+    color: #2A293E;
+
+
+    border: none;
+    border-bottom: 5px solid rgba(0,0,0,1);
+    background:#f8f4e5;
+    min-width: 250px;
+    padding-left: 5px;
+    outline: none;
+    color: rgba(0,0,0,1);
+
+    background-color:beige;
+}
+
+.inputID:focus{
+    border-bottom: 5px solid #ffa580;
+}
+
+.inputPW:focus{
+    border-bottom: 5px solid #ffa580;
+}
+
+.divInput{
+    width:100%;
+    height:100%;
+    /* background-color: black; */
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.btnSignUp{
+    display: block;
+    height:4vh;
+    margin: 0 auto;
+    line-height: 14px * 2;
+    padding: 0 20px;
+    background: #ffa580;
+    letter-spacing: 2px;
+    transition: .2s all ease-in-out;
+    outline: none;
+    border: 1px solid rgba(0,0,0,1);
+    box-shadow: 3px 3px 1px #95a4ff, 3px 3px 1px 1px rgba(0,0,0,1);
+}
+
+.btnSignUp:hover{
+    background: rgba(0,0,0,1);
+    color: white;
+    border: 1px solid rgba(0,0,0,1);
+}

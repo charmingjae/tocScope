@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+.mainDiv{
+    background-color:#143D1B;
+    height: 4vh;
+    display:flex;
+    align-items: center;
+    overflow:hidden;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+}
+
+.title{
+    font-size:20px;
+    color:white;
+    margin-left:3%;
+}
+
+.btnDiv{
+    width: 100%;
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 3%;
+}
+
+.btnSign{
+/* 생략 */
+    margin: 0;
+    padding: 0.2rem 0.6rem;
+    margin-right: 0.5%;
+    font-family: "Noto Sans KR", sans-serif;
+    /* font-size: 1rem; */
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+
+    display: inline-block;
+    width: auto;
+
+    background-color: transparent;
+    color: white;
+
+    border: none;
+    cursor: pointer;
+
+    transition: 0.5s;
+    font-size:auto;
+    /* 지려버린 CSS */
+    /* 글자 무조건 한 줄로 하기 */
+    white-space: nowrap;
+}
+
+.btnSign:active,
+.btnSign:hover,
+.btnSign:focus {
+  background: var(--button-hover-bg-color);
+  color:white;
+  outline:0;
+  font-weight:bold;
+}
+.btnSign:disabled {
+  opacity: 0.5;
+}
+
+.Link{
+    text-align:center;
+    height:100%;
+}
+
+.linkTitle{
+    text-decoration: none;
+    padding-left: 3vw;
+}
