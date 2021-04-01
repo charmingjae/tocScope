@@ -31,10 +31,15 @@ const Navigator = () => {
 
       {userId !== "" && userId != null ? (
         <div className={`${style.btnDiv}`}>
-          <Link to="/mod3in" className={`${style.Link}`}>
-            {/* 로그인 시 아이디 표시 */}
+          {/* <Link to="/mod3in" className={`${style.Link}`}>
+            
+              <button className={`${style.btnSign}`}>@{getLocal}</button>
+          </Link> */}
+
+          {/* dropdown test */}
+          <div>
             <button className={`${style.btnSign}`}>@{getLocal}</button>
-          </Link>
+          </div>
           {/* <Link className={`${style.Link}`}> */}
           {/* 로그인 시 아이디 표시 */}
           <button className={`${style.btnSign}`} onClick={doLogout}>
