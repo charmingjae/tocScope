@@ -29,7 +29,7 @@ function Toc3inTable({ columns, data }) {
   };
 
   const submitTocinfo = () => {
-    Axios.post("http://localhost:1234/api/prog/mod3in", {
+    Axios.post("/api/prog/mod3in", {
       tocData: tocInfo,
       userID: localStorage.getItem("userInfo"),
     }).then(() => {

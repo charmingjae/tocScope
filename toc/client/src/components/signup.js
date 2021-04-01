@@ -21,7 +21,7 @@ function SignUp() {
     } else if (signupInfo.userPW !== signupInfo.userPWconfirm) {
       alert("비밀번호를 확인해주세요.");
     } else {
-      Axios.post("http://localhost:1234/api/insert", {
+      Axios.post("/api/insert", {
         userID: signupInfo.userID,
         userPW: signupInfo.userPW,
       }).then((result) => {

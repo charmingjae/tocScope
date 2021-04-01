@@ -11,7 +11,7 @@ function SignIn() {
   });
 
   const submitReview = () => {
-    Axios.post("http://localhost:1234/api/login", signinInfo).then((result) => {
+    Axios.post("/api/login", signinInfo).then((result) => {
       // alert("로그인 전송 완료!");
       console.log(result.data.result);
       if (result.data.result === 1) {
