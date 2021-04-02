@@ -4,9 +4,11 @@ import style from "../css/index.module.css";
 
 function Hello() {
   return (
-    <Link to="/scope3in">
-      <button className={`${style.btnShowdata}`}>데이터 보기</button>
-    </Link>
+    <button className={`${style.btnShowdata}`}>
+      <Link to="/scope3in" className={`${style.dataBtnLink}`}>
+        데이터 보기
+      </Link>
+    </button>
   );
 }
 
