@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import style from "../css/chngPW.module.css";
+import style from "../css/signup.module.css";
 import Axios from "axios";
 
 function SignUp() {
   let history = useHistory();
-  const [signupInfo, setSignupInfo] = useState({
-    userID: "",
-    userPW: "",
-    userPWconfirm: "",
+  const [passwordInfo, setPasswordInfo] = useState({
+    currentPW: "",
+    chngPW: "",
+    confChngPW: "",
   });
 
+  // 현재 비밀번호가 맞는지 아닌지 확인
+  // 비밀번호가 맞으면 변경할 비밀번호하고 한 번 더 입력한 비밀번호가 맞는지 확인
+  // 나중에 합시다
   const submitReview = () => {
     if (
-      signupInfo.userPW === "" ||
-      signupInfo.userPWconfirm === "" ||
-      signupInfo.userID === ""
+      passwordInfo.currentPW === "" ||
+      passwordInfo.chngPW === "" ||
+      passwordInfo.confChngPW === ""
     ) {
       alert("입력한 정보를 확인해주세요.");
     } else if (signupInfo.userPW !== signupInfo.userPWconfirm) {
@@ -38,38 +41,38 @@ function SignUp() {
 
   const getValue = (e) => {
     const { name, value } = e.target;
-    setSignupInfo({
-      ...signupInfo,
+    setPasswordInfo({
+      ...passwordInfo,
       [name]: value,
     });
-    console.log(signupInfo);
+    console.log(passwordInfo);
   };
 
   return (
     <div className={`${style.mainDiv}`}>
       <div className={`${style.divInput}`}>
         <input
-          className={`${style.inputID}`}
-          placeholder="ID"
-          name="userID"
+          className={`${style.inputCurPW}`}
+          placeholder="현재 비밀번호"
+          name="currentPW"
           onChange={getValue}
         ></input>
         <br />
         <br />
         <input
           className={`${style.inputPW}`}
-          placeholder="PW"
+          placeholder="변경할 비밀번호"
           type="password"
-          name="userPW"
+          name="chngPW"
           onChange={getValue}
         ></input>
         <br />
         <br />
         <input
           className={`${style.inputPW}`}
-          placeholder="PW_CONFIRM"
+          placeholder="변경할 비밀번호 확인"
           type="password"
-          name="userPWconfirm"
+          name="confChngPW"
           onChange={getValue}
         ></input>
         <br />
@@ -79,7 +82,7 @@ function SignUp() {
           onClick={submitReview}
           type="submit"
         >
-          SIGN UP
+          변경하기
         </button>
       </div>
     </div>

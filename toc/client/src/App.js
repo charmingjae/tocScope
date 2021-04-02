@@ -7,6 +7,7 @@ import TableIndex from "./components/tableIndex";
 import React from "react";
 import Navigator from "./components/navigator";
 import Modify3in from "./components/mod3in";
+import ChangePassword from "./components/chngPW";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signin" component={SignIn} />
         <Route path="/scope3in" component={TableIndex} />
         <Route path="/mod3in" component={Modify3in} />
+        <Route path="/chngPW" component={ChangePassword} />
       </BrowserRouter>
     </div>
   );

@@ -89,11 +89,13 @@ const Navigator = () => {
           <ul>
             <li>
               <Link to="/mod3in" className={`${style.Link}`}>
-                <span href="#">My Toc</span>
+                <span>내 이수 현황</span>
               </Link>
             </li>
             <li>
-              <span href="#">Trips</span>
+              <Link to="/chngPW" className={`${style.Link}`}>
+                <span>비밀번호 변경</span>
+              </Link>
             </li>
             <li>
               <span onClick={doLogout}>로그아웃</span>
