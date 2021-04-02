@@ -20,7 +20,6 @@ app.post("/api/insert", (req, res) => {
   // etc. 추후에 입력한 비밀번호 확인 인풋을 넣어서 검증 추가
   const getDupCnt = "SELECT COUNT(*) FROM mentee WHERE userID = ?";
   db.query(getDupCnt, [userID, userPW], (err, result) => {
-    console.log(result[0]["COUNT(*)"]);
     var queryRes = result[0]["COUNT(*)"];
     if (queryRes >= 1) {
       res.send({ result: 0 });
@@ -55,7 +54,6 @@ app.get("/api/get/3in", (req, res) => {
 });
 
 app.post("/api/post/mod3in", (req, res) => {
-  console.log(req.body);
   const sqlQuery =
     "SELECT fst1in, scd1in, stu2in, stu3in FROM toc3in WHERE stu_no =?";
   db.query(sqlQuery, [req.body.userID], (err, result) => {
@@ -78,7 +76,6 @@ app.post("/api/login", (req, res) => {
 });
 
 app.post("/api/prog/mod3in", (req, res) => {
-  console.log(req.body.tocData.fst1in);
   var stuNo = req.body.userID;
   var fst1in = req.body.tocData.fst1in;
   var scd1in = req.body.tocData.scd1in;
@@ -98,11 +95,24 @@ app.post("/api/prog/mod3in", (req, res) => {
 });
 
 app.post("/api/getPw", (req, res) => {
-  console.log(req.body.userID);
   const getuserID = req.body.userID;
+  const getuserPW = req.body.userPW;
   const sqlQuery = "SELECT userPW FROM mentee WHERE userID = ?";
   db.query(sqlQuery, getuserID, (err, result) => {
-    res.send({ returnValue: result[0].userPW });
+    if (getuserPW === result[0].userPW) {
+      res.send({ result: 1 });
+    } else {
+      res.send({ result: 0 });
+    }
+  });
+});
+
+app.post("/api/updatepw", (req, res) => {
+  const getuserID = req.body.userID;
+  const getchngPW = req.body.chngPW;
+  const sqlQuery = "UPDATE mentee SET userPW = ? WHERE userID = ?";
+  db.query(sqlQuery, [getchngPW, getuserID], (err, result) => {
+    res.send("success!");
   });
 });
 

@@ -19,8 +19,30 @@ function SignUp() {
     var getValue = "";
     Axios.post("/api/getPw", {
       userID: localStorage.getItem("userInfo"),
+      userPW: passwordInfo.currentPW,
     }).then((response) => {
-      getValue = response.data.returnValue;
+      getValue = response.data.result;
+      if (getValue) {
+        if (passwordInfo.chngPW === "" || passwordInfo.confChngPW === "") {
+          alert("비밀번호를 입력 해주세요.");
+        } else {
+          if (passwordInfo.chngPW === passwordInfo.confChngPW) {
+            Axios.post("/api/updatepw", {
+              userID: localStorage.getItem("userInfo"),
+              chngPW: passwordInfo.confChngPW,
+            }).then((resonse) => {
+              if (response) {
+                alert("변경 완료!");
+                history.push("/");
+              }
+            });
+          } else {
+            alert("비밀번호가 다릅니다.");
+          }
+        }
+      } else {
+        alert("비밀번호가 다릅니다.");
+      }
     });
     // if (
     //   passwordInfo.currentPW === "" ||
@@ -59,8 +81,9 @@ function SignUp() {
     <div className={`${style.mainDiv}`}>
       <div className={`${style.divInput}`}>
         <input
-          className={`${style.inputCurPW}`}
+          className={`${style.inputPW}`}
           placeholder="현재 비밀번호"
+          type="password"
           name="currentPW"
           onChange={getValue}
         ></input>
