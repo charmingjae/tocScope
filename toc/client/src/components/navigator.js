@@ -39,7 +39,7 @@ const Navigator = () => {
       <div className={`${style.mainDiv}`}>
         <Link to="/" className={`${style.linkTitle}`}>
           <span className={`${style.title}`}>
-            <b>TOC!</b>
+            <b>TOC! ( beta )</b>
           </span>
         </Link>
 
