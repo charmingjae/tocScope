@@ -97,6 +97,15 @@ app.post("/api/prog/mod3in", (req, res) => {
   });
 });
 
+app.post("/api/getPw", (req, res) => {
+  console.log(req.body.userID);
+  const getuserID = req.body.userID;
+  const sqlQuery = "SELECT userPW FROM mentee WHERE userID = ?";
+  db.query(sqlQuery, getuserID, (err, result) => {
+    res.send({ returnValue: result[0].userPW });
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`running on port ${PORT}`);
 });
