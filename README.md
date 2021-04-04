@@ -14,14 +14,14 @@ React.js
 ```
 BE & Server :
 ```
-Node.js [v12.18.2](https://nodejs.org/en/blog/release/v12.18.2/)
+Node.js (v12.18.2)
 ```
 DBMS :
 ```
 MySQL (v8.0.19 for osx10.15 on x86_64 (Homebrew))
 ```
 
-## 🏃‍♂️ Documentation
+## 🏃‍♂️ Getting Started
 
 ~~~bash
 
