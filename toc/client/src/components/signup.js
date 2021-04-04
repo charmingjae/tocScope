@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import style from "../css/chngPW.module.css";
+import style from "../css/signup.module.css";
 import Axios from "axios";
 
 function SignUp() {
