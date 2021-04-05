@@ -42,3 +42,46 @@ $ npm start
 
 ~~~  
 
+<br/> 
+
+
+## 📖 Dependencies  
+
+Server :   
+
+~~~json
+
+"dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7"
+}
+
+~~~
+
+Client :  
+
+~~~json
+"dependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "gh-pages": "^3.1.0",
+    "http-proxy-middleware": "^1.0.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-table": "^7.6.3",
+    "redux": "^4.0.5",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.3.0",
+    "web-vitals": "^1.1.1"
+},
+~~~
