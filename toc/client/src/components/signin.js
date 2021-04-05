@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import style from "../css/signin.module.css";
 import Axios from "axios";
+import address from "../servRoute";
 
 function SignIn() {
   let history = useHistory();
@@ -11,7 +12,7 @@ function SignIn() {
   });
 
   const submitReview = () => {
-    Axios.post("/api/login", signinInfo).then((result) => {
+    Axios.post(address + "/api/login", signinInfo).then((result) => {
       // alert("로그인 전송 완료!");
       console.log(result.data.result);
       if (result.data.result === 1) {

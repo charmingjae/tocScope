@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import Axios from "axios";
 import Toc3inTable from "./mod3inTable";
+import address from "../servRoute";
 
 function Mod3in() {
   const [viewContents, setViewContents] = useState([]);
@@ -32,7 +33,7 @@ function Mod3in() {
   // useEffect 마지막 파라미터에 빈 배열 넣으면 한 번만 실행한다는 뜻이다.
   // localstorage의 아이디 값을 보내고 리턴 받아오는거 구현하기
   useMemo(() => {
-    Axios.post("/api/post/mod3in", {
+    Axios.post(address + "/api/post/mod3in", {
       userID: localStorage.getItem("userInfo"),
     }).then((response) => {
       setViewContents(response.data);

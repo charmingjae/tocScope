@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import style from "../css/signup.module.css";
 import Axios from "axios";
+import address from "../servRoute";
 
 function SignUp() {
   let history = useHistory();
@@ -21,7 +22,7 @@ function SignUp() {
     } else if (signupInfo.userPW !== signupInfo.userPWconfirm) {
       alert("비밀번호를 확인해주세요.");
     } else {
-      Axios.post("/api/insert", {
+      Axios.post(address + "/api/insert", {
         userID: signupInfo.userID,
         userPW: signupInfo.userPW,
       }).then((result) => {

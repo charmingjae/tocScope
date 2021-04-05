@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import Axios from "axios";
 import Table from "./table";
+import address from "../servRoute";
 
 function TableIndex() {
   const [viewContents, setViewContents] = useState([]);
@@ -39,7 +40,7 @@ function TableIndex() {
 
   // useEffect 마지막 파라미터에 빈 배열 넣으면 한 번만 실행한다는 뜻이다.
   useMemo(() => {
-    Axios.get("/api/get/3in").then((response) => {
+    Axios.get(address + "/api/get/3in").then((response) => {
       setViewContents(response.data);
       console.log(response.data);
     });

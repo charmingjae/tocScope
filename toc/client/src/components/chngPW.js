@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import style from "../css/chngPW.module.css";
 import Axios from "axios";
+import address from "../servRoute";
 
 function SignUp() {
   let history = useHistory();
@@ -17,7 +18,7 @@ function SignUp() {
   const submitReview = () => {
     // 서버에 요청해서 값 가져오기
     var getValue = "";
-    Axios.post("/api/getPw", {
+    Axios.post(address + "/api/getPw", {
       userID: localStorage.getItem("userInfo"),
       userPW: passwordInfo.currentPW,
     }).then((response) => {
@@ -27,7 +28,7 @@ function SignUp() {
           alert("비밀번호를 입력 해주세요.");
         } else {
           if (passwordInfo.chngPW === passwordInfo.confChngPW) {
-            Axios.post("/api/updatepw", {
+            Axios.post(address + "/api/updatepw", {
               userID: localStorage.getItem("userInfo"),
               chngPW: passwordInfo.confChngPW,
             }).then((resonse) => {

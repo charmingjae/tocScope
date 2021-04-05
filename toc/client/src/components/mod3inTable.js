@@ -3,6 +3,7 @@ import { useTable, useGlobalFilter, useSortBy } from "react-table";
 import style from "../css/mod3intable.module.css";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
+import address from "../servRoute";
 
 function Toc3inTable({ columns, data }) {
   let history = useHistory();
@@ -29,7 +30,7 @@ function Toc3inTable({ columns, data }) {
   };
 
   const submitTocinfo = () => {
-    Axios.post("/api/prog/mod3in", {
+    Axios.post(address + "/api/prog/mod3in", {
       tocData: tocInfo,
       userID: localStorage.getItem("userInfo"),
     }).then(() => {
