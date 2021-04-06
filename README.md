@@ -57,7 +57,8 @@ Server :
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "sha256": "^0.2.0"
 }
 
 ~~~
@@ -83,5 +84,5 @@ Client :
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0",
     "web-vitals": "^1.1.1"
-},
+}
 ~~~
