@@ -2,7 +2,8 @@
 
 .mainDiv{
     background-color:#143D1B;
-    height: 6vh;
+    /* 화면 작아지면 크기 변하게 하고 싶으면 숫자vh 사용 */
+    height: 50px;
     display:flex;
     align-items: center;
     overflow:hidden;
