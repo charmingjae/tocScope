@@ -92,6 +92,12 @@ function Toc3inTable({ columns, data }) {
                     <option key="미이수" value="미이수">
                       미이수
                     </option>
+                    <option
+                      key="창의융합을위한3D프린팅체험튜터링"
+                      value="창의 융합을 위한 3D프린팅 체험 튜터링"
+                    >
+                      창의 · 융합을 위한 3D프린팅 체험 튜터링
+                    </option>
                   </select>
                 </td>
                 <td key="td2" className={`${style.tabletd}`}>
