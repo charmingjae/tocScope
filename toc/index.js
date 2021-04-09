@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.port || 1234;
 const cors = require("cors");
 const hashing = require("./config/hashing");
-const salt = require("./db").salt;
+const salt = require("./config/salt");
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,6 +17,7 @@ app.post("/api/insert", (req, res) => {
   const userID = req.body.userID;
   const userPW = req.body.userPW;
   const hashed = hashing.enc(userID, userPW, salt);
+  console.log("salt : ", salt);
   console.log(hashed);
   // 1. 입력 받은 아이디 값이 있는지 검사
   // 2. 카운트가 1이상이면 이미 가입한 회원이 있다는 알림 표시
