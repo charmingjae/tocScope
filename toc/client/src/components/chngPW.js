@@ -4,7 +4,7 @@ import style from "../css/chngPW.module.css";
 import Axios from "axios";
 import address from "../servRoute";
 
-function SignUp() {
+function ChangePW() {
   let history = useHistory();
   const [passwordInfo, setPasswordInfo] = useState({
     currentPW: "",
@@ -120,4 +120,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default ChangePW;

@@ -3,9 +3,8 @@ import { useHistory } from "react-router-dom";
 import style from "../css/signin.module.css";
 import Axios from "axios";
 import address from "../servRoute";
-import { Link } from "react-router-dom";
 
-function SignIn() {
+function ResetPW() {
   let history = useHistory();
   const [signinInfo, setSigninInfo] = useState({
     userID: "",
@@ -59,16 +58,13 @@ function SignIn() {
           onClick={submitReview}
           type="submit"
         >
-          SIGN IN
+          SUBMIT
         </button>
         <br />
         <br />
-        <Link to="/resetPW" className={`${style.forgotPW}`}>
-          비밀번호를 잊으셨나요?
-        </Link>
       </div>
     </div>
   );
 }
 
-export default SignIn;
+export default ResetPW;
