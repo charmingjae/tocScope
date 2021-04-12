@@ -97,6 +97,13 @@ const Navigator = () => {
                 <span>비밀번호 변경</span>
               </Link>
             </li>
+            {localStorage.getItem("userInfo") === "202147019" ? (
+              <li>
+                <Link to="/get/resetPW" className={`${style.Link}`}>
+                  <span>초기화 신청</span>
+                </Link>
+              </li>
+            ) : null}
             <li>
               <span onClick={doLogout}>로그아웃</span>
             </li>

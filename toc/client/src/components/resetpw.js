@@ -16,7 +16,7 @@ function ResetPW() {
     } else {
       Axios.post(address + "/api/resetPW", resetInfo).then((result) => {
         if (result.data.result === 1) {
-          alert("신청이 완료되었습니다.");
+          alert("신청이 완료되었습니다.\n검토 후에 처리 해드리겠습니다! :>");
           history.push("/");
         } else {
           alert("해당 아이디가 없습니다.");

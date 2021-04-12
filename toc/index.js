@@ -7,6 +7,7 @@ const PORT = process.env.port || 1234;
 const cors = require("cors");
 const hashing = require("./config/hashing");
 const salt = require("./config/salt");
+const { request } = require("express");
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -148,6 +149,27 @@ app.post("/api/resetPW", (req, res) => {
       // 요청된 아이디가 회원 목록에 없으면
       // "Not Found" 리턴하기
       res.send("Cannot found");
+    }
+  });
+});
+
+app.get("/api/get/resetPw", (req, res) => {
+  const sqlQuery = "SELECT * FROM resetPW";
+  db.query(sqlQuery, (err, result) => {
+    res.send(result);
+  });
+});
+
+app.post("/api/prog/resetPW", (req, res) => {
+  const requestID = req.body.requestID;
+
+  const hashed = hashing.enc(requestID, "test", salt);
+  const sqlQuery = "UPDATE mentee SET userPW = ? WHERE userID = ?";
+  db.query(sqlQuery, [hashed, requestID], (err, result) => {
+    if (result.affectedRows >= 1) {
+      res.send({ result: 1 });
+    } else {
+      res.send({ result: 0 });
     }
   });
 });
