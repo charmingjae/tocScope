@@ -1,36 +1,36 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import style from "../css/signin.module.css";
+import style from "../css/resetpw.module.css";
 import Axios from "axios";
 import address from "../servRoute";
 
 function ResetPW() {
   let history = useHistory();
-  const [signinInfo, setSigninInfo] = useState({
-    userID: "",
-    userPW: "",
+  const [resetInfo, setResetInfo] = useState({
+    requestID: "",
   });
 
-  const submitReview = () => {
-    Axios.post(address + "/api/login", signinInfo).then((result) => {
-      // alert("로그인 전송 완료!");
-      console.log(result.data.result);
-      if (result.data.result === 1) {
-        localStorage.setItem("userInfo", signinInfo.userID);
-        history.push("/");
-      } else {
-        alert("로그인 정보를 확인하세요.");
-      }
-    });
+  const submitID = () => {
+    if (resetInfo.requestID === "") {
+      alert("아이디를 입력해주세요.");
+    } else {
+      Axios.post(address + "/api/resetPW", resetInfo).then((result) => {
+        if (result.data.result === 1) {
+          alert("신청이 완료되었습니다.");
+          history.push("/");
+        } else {
+          alert("해당 아이디가 없습니다.");
+        }
+      });
+    }
   };
 
   const getValue = (e) => {
     const { name, value } = e.target;
-    setSigninInfo({
-      ...signinInfo,
+    setResetInfo({
+      ...resetInfo,
       [name]: value,
     });
-    console.log(signinInfo);
   };
 
   return (
@@ -39,23 +39,14 @@ function ResetPW() {
         <input
           className={`${style.inputID}`}
           placeholder="ID"
-          name="userID"
-          onChange={getValue}
-        ></input>
-        <br />
-        <br />
-        <input
-          className={`${style.inputPW}`}
-          placeholder="PW"
-          name="userPW"
-          type="password"
+          name="requestID"
           onChange={getValue}
         ></input>
         <br />
         <br />
         <button
-          className={`${style.btnSignIn}`}
-          onClick={submitReview}
+          className={`${style.btnResetPw}`}
+          onClick={submitID}
           type="submit"
         >
           SUBMIT

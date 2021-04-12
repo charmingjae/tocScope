@@ -126,6 +126,32 @@ app.post("/api/updatepw", (req, res) => {
   });
 });
 
+app.post("/api/resetPW", (req, res) => {
+  const requestID = req.body.requestID;
+  const sqlQuery = "SELECT COUNT(*) FROM mentee WHERE userID = ?";
+  db.query(sqlQuery, requestID, (err, result) => {
+    const getResult = result[0]["COUNT(*)"];
+
+    if (getResult >= 1) {
+      // 요청된 아이디가 회원 목록에 있으면
+      // 리셋 요청 데이터베이스에 해당 아이디 추가
+      const sqlQuery = "INSERT INTO resetPW(requestID) VALUES(?)";
+      db.query(sqlQuery, requestID, (err, result) => {
+        const chkSucceed = result.affectedRows;
+        if (chkSucceed >= 1) {
+          res.send({ result: 1 });
+        } else {
+          res.send({ result: 0 });
+        }
+      });
+    } else {
+      // 요청된 아이디가 회원 목록에 없으면
+      // "Not Found" 리턴하기
+      res.send("Cannot found");
+    }
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`running on port ${PORT}`);
 });
