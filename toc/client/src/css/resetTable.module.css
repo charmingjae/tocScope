@@ -1,0 +1,80 @@
+.tableframe{
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+    height: 50vh;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    flex: 1;
+    margin-top: 5vh;
+}
+
+.tableth{
+    /* border: 1px solid black; */
+    text-align: center;
+    background-color: #1b4dd7;
+    color: white;
+    font-size: 0.9em;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.tabletd{
+    border: 1px solid black;
+    text-align: center;
+}   
+
+tbody{
+    word-break: nowrap;
+}
+
+.searchcomp{
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10vh;
+}
+
+.searchcomp >form >input{
+    outline:0;
+    height:12%;
+    width: 5%;
+
+    margin-left: 3vw;
+
+    font-size: 14pt;
+    font-family: 'Fjalla One';
+    color: #2A293E;
+
+    border: none;
+    border-bottom: 5px solid rgba(0,0,0,1);
+    min-width: 250px;
+    padding-left: 5px;
+    outline: none;
+    color: rgba(0,0,0,1);
+    background-color: transparent;
+}
+
+.searchcomp >form >input:focus{
+    border-bottom: 5px solid #fafad2;
+}
+
+.searchcomp > form > button {
+    margin-left: 5px;
+    height:3vh;
+    line-height: 14px * 2;
+    padding: 0 10px;
+    background:#809aeb;
+    letter-spacing: 2px;
+    transition: .2s all ease-in-out;
+    outline: none;
+    color: white;
+    border: 1px solid rgba(0,0,0,1);
+    box-shadow: 3px 3px 1px #204ac8, 3px 3px 1px 1px rgba(0,0,0,1);
+}
+
+.searchcomp > form > button:hover{
+    background: rgba(0,0,0,1);
+    color: white;
+    border: 1px solid rgba(0,0,0,1);
+}

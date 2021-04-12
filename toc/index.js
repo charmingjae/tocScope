@@ -174,6 +174,19 @@ app.post("/api/prog/resetPW", (req, res) => {
   });
 });
 
+app.post("/api/prog/delReq", (req, res) => {
+  const requestID = req.body.requestID;
+
+  const sqlQuery = "DELETE FROM resetPW where requestID = ?";
+  db.query(sqlQuery, requestID, (err, result) => {
+    if (result.affectedRows >= 1) {
+      res.send({ result: 1 });
+    } else {
+      res.send({ result: 0 });
+    }
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`running on port ${PORT}`);
 });
