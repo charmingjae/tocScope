@@ -111,27 +111,6 @@ function ResetPwTable({ columns, data }) {
               </td>
             </tr>
           )}
-          {/* {rows.map((row) => {
-            prepareRow(row);
-            cnt += 1;
-            return (
-              <tr {...row.getRowProps()} id={cnt}>
-                {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()} className={`${style.tabletd}`}>
-                    {cell.render("Cell")}
-                  </td>
-                ))}
-                <td className={`${style.tabletd}`}>
-                  <button onClick={doResetPw} name={cnt}>
-                    변경
-                  </button>
-                  <button onClick={doDeleteReq} name={cnt}>
-                    삭제
-                  </button>
-                </td>
-              </tr>
-            );
-          })} */}
         </tbody>
       </table>
     </>

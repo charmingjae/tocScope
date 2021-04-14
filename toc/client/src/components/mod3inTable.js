@@ -140,6 +140,9 @@ function Toc3inTable({ columns, data }) {
                     >
                       SOC 들어오는 노트 공모전
                     </option>
+                    <option key="POM나는경진대회" value="POM나는 경진대회">
+                      POM나는 경진대회
+                    </option>
                   </select>
                 </td>
                 <td key="td4" className={`${style.tabletd}`}>
