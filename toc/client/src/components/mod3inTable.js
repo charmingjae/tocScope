@@ -98,6 +98,18 @@ function Toc3inTable({ columns, data }) {
                     >
                       창의 · 융합을 위한 3D프린팅 체험 튜터링
                     </option>
+                    <option
+                      key="K-MOOC특강[문화관광상품의이해]"
+                      value="K-MOOC특강[문화관광상품의이해]"
+                    >
+                      K-MOOC특강[문화관광상품의이해]
+                    </option>
+                    <option
+                      key="K-MOOC특강[스크래치와 스마트코딩]"
+                      value="K-MOOC특강[스크래치와 스마트코딩]"
+                    >
+                      K-MOOC특강[스크래치와 스마트코딩]
+                    </option>
                   </select>
                 </td>
                 <td key="td2" className={`${style.tabletd}`}>
@@ -118,6 +130,18 @@ function Toc3inTable({ columns, data }) {
                       value="창의 융합을 위한 3D프린팅 체험 튜터링"
                     >
                       창의 · 융합을 위한 3D프린팅 체험 튜터링
+                    </option>
+                    <option
+                      key="K-MOOC특강[문화관광상품의이해]"
+                      value="K-MOOC특강[문화관광상품의이해]"
+                    >
+                      K-MOOC특강[문화관광상품의이해]
+                    </option>
+                    <option
+                      key="K-MOOC특강[스크래치와 스마트코딩]"
+                      value="K-MOOC특강[스크래치와 스마트코딩]"
+                    >
+                      K-MOOC특강[스크래치와 스마트코딩]
                     </option>
                   </select>
                 </td>
